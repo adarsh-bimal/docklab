@@ -103,12 +103,13 @@ func ensureContainer(name string, image string, network string, ports []string) 
 	}
 
 	fmt.Printf("Starting %s...\n", name)
-	createContainer(name, image, network, ports)
+
 	if err := createContainer(name, image, network, ports); err != nil {
 		return err
 	}
 
-	return startContainer(name)
+	return nil
+
 }
 
 func openShell() error {
@@ -181,7 +182,7 @@ to quickly create a Cobra application.`,
 
 		ensureContainer(
 			"pentest-toolkit",
-			"cyberlab/kali",
+			"adarshbimal/docklab-toolkit:latest",
 			networkName,
 			nil,
 		)
