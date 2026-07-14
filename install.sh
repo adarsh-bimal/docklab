@@ -43,7 +43,7 @@ chmod +x docklab
 
 echo "Installing to /usr/local/bin..."
 sudo mv docklab /usr/local/bin/docklab
-
+sudo install -Dm755 docklab /usr/local/bin/docklab
 echo
 echo "Installation complete!"
 echo
